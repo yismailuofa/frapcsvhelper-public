@@ -6,16 +6,19 @@ interface Props {
 
 export default function Title({ content }: Props): ReactElement {
   return (
-    <div
+    <p
       style={{
         fontFamily: "'Open Sans', sans-serif",
-        color: "white",
+        color: "#E7ECEF",
         fontSize: "5em",
         letterSpacing: "-0.02em",
-        fontWeight: "bolder"
+        fontWeight: "bolder",
+        textAlign: "center",
+        marginTop: "0",
+        marginBottom: "2em"
       }}
     >
       {content}
-    </div>
+    </p>
   );
 }

@@ -1,20 +1,22 @@
-import { ReactElement } from "react";
+import { ReactElement, useState } from "react";
 import Title from "./Title";
+import UploadFiles from "./UploadFiles";
+import FilePreview from "./FilePreview";
 
 export default function App(): ReactElement {
+  const [files, setFiles] = useState<FileList | null>(null);
+
   return (
     <div
-      style={{
-        width: "100vw",
-        height: "100vh",
-        backgroundImage:
-          "linear-gradient(0deg, rgba(100,127,179,1) 0%, rgba(163,189,237,1) 100%)",
-        display: "flex",
-        alignItems: "top",
-        justifyContent: "center",
-      }}
+    style={{
+      fontFamily: "'Open Sans', sans-serif",
+      color: "#E7ECEF",
+      marginBottom: "50px"
+    }}
     >
-      <Title content="FRAP CSV Helper"/>
+      <Title content="FRAP CSV Helper" />
+      <UploadFiles setFiles={setFiles} />
+      <FilePreview files={files}/>
     </div>
   );
 }
