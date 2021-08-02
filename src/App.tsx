@@ -6,12 +6,6 @@ import FilePreview from "./FilePreview";
 export default function App(): ReactElement {
   const [files, setFiles] = useState<FileList | null>(null);
 
-  const handleChange = (files: FileList | null) => {
-    setFiles(files)
-    if (files !== null && files.length > 0) {
-      console.log(files)
-    }
-  }
   return (
     <div
     style={{
@@ -21,7 +15,7 @@ export default function App(): ReactElement {
     }}
     >
       <Title content="FRAP CSV Helper" />
-      <UploadFiles handleChange={handleChange} />
+      <UploadFiles setFiles={setFiles} />
       <FilePreview files={files}/>
     </div>
   );

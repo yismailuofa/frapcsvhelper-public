@@ -2,10 +2,10 @@ import React, { ReactElement } from "react";
 import "./buttons.css"
 
 interface Props {
-  handleChange: (files: FileList | null) => void
+  setFiles: React.Dispatch<React.SetStateAction<FileList | null>>;
 }
 
-export default function UploadFiles({ handleChange }: Props): ReactElement {
+export default function UploadFiles({ setFiles }: Props): ReactElement {
   return (
     <div
       style={{
@@ -33,7 +33,7 @@ export default function UploadFiles({ handleChange }: Props): ReactElement {
         multiple
         accept=".csv"
         style={{ display: "none" }}
-        onChange={(e) => handleChange(e.currentTarget.files)}
+        onChange={(e) => setFiles(e.currentTarget.files)}
       ></input>
     </div>
   );
