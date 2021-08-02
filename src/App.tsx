@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ReactElement } from "react";
+import Title from "./Title";
 
-function App() {
+export default function App(): ReactElement {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      style={{
+        width: "100vw",
+        height: "100vh",
+        backgroundImage:
+          "linear-gradient(0deg, rgba(100,127,179,1) 0%, rgba(163,189,237,1) 100%)",
+        display: "flex",
+        alignItems: "top",
+        justifyContent: "center",
+      }}
+    >
+      <Title content="FRAP CSV Helper"/>
     </div>
   );
 }
-
-export default App;
