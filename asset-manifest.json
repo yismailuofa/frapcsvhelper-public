@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/frapcsvhelper/static/css/main.6e8659ae.chunk.css",
-    "main.js": "/frapcsvhelper/static/js/main.467c41f6.chunk.js",
-    "main.js.map": "/frapcsvhelper/static/js/main.467c41f6.chunk.js.map",
-    "runtime-main.js": "/frapcsvhelper/static/js/runtime-main.0f8bde03.js",
-    "runtime-main.js.map": "/frapcsvhelper/static/js/runtime-main.0f8bde03.js.map",
-    "static/js/2.087860cf.chunk.js": "/frapcsvhelper/static/js/2.087860cf.chunk.js",
-    "static/js/2.087860cf.chunk.js.map": "/frapcsvhelper/static/js/2.087860cf.chunk.js.map",
-    "index.html": "/frapcsvhelper/index.html",
-    "static/css/main.6e8659ae.chunk.css.map": "/frapcsvhelper/static/css/main.6e8659ae.chunk.css.map",
-    "static/js/2.087860cf.chunk.js.LICENSE.txt": "/frapcsvhelper/static/js/2.087860cf.chunk.js.LICENSE.txt"
+    "main.css": "/frapcsvhelper-public/static/css/main.6e8659ae.chunk.css",
+    "main.js": "/frapcsvhelper-public/static/js/main.467c41f6.chunk.js",
+    "main.js.map": "/frapcsvhelper-public/static/js/main.467c41f6.chunk.js.map",
+    "runtime-main.js": "/frapcsvhelper-public/static/js/runtime-main.2d65f2b0.js",
+    "runtime-main.js.map": "/frapcsvhelper-public/static/js/runtime-main.2d65f2b0.js.map",
+    "static/js/2.087860cf.chunk.js": "/frapcsvhelper-public/static/js/2.087860cf.chunk.js",
+    "static/js/2.087860cf.chunk.js.map": "/frapcsvhelper-public/static/js/2.087860cf.chunk.js.map",
+    "index.html": "/frapcsvhelper-public/index.html",
+    "static/css/main.6e8659ae.chunk.css.map": "/frapcsvhelper-public/static/css/main.6e8659ae.chunk.css.map",
+    "static/js/2.087860cf.chunk.js.LICENSE.txt": "/frapcsvhelper-public/static/js/2.087860cf.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.0f8bde03.js",
+    "static/js/runtime-main.2d65f2b0.js",
     "static/js/2.087860cf.chunk.js",
     "static/css/main.6e8659ae.chunk.css",
     "static/js/main.467c41f6.chunk.js"
