@@ -47,5 +47,5 @@
   "devDependencies": {
     "@types/papaparse": "^5.2.6"
   },
-  "homepage": "https://myusername.github.io/frapcsvhelper"
+  "homepage": "https://myusername.github.io/frapcsvhelper-public"
 }
