@@ -6,18 +6,42 @@ import * as Papa from "papaparse";
 
 export default function App(): ReactElement {
   const [files, setFiles] = useState<FileList | null>(null);
-  let minRows: number = Number.MAX_VALUE;
-  let i = 0;
-  let parsedFiles: any[] = []
 
-  const makeCSV = (parsedFiles: any[]) => {
-    console.log(parsedFiles)
-  }
+  const makeCSV = (parsedFiles: any[], numRows: number) => {
+    const csvObj: object[] = [];
+    for (var i = 1; i < numRows; i++) {
+      let currRow = {};
+      for (var j = 1; j < parsedFiles.length + 1; j++) {
+        const [, b, c, d] = parsedFiles[j - 1][i];
+        const calcVal = (b - d) / (c - d);
+        currRow = { ...currRow, [j]: calcVal };
+      }
+      csvObj.push(currRow);
+    }
+    const blob = new Blob([Papa.unparse(csvObj)]);
+    const date = new Date();
+    const filename = "MergedResults" + date.toLocaleDateString() + ".csv";
+    if (navigator.msSaveBlob) {
+      navigator.msSaveBlob(blob);
+    } else {
+      var link = document.createElement("a");
+      if (link.download !== undefined) {
+        var url = URL.createObjectURL(blob);
+        link.setAttribute("href", url);
+        link.setAttribute("download", filename);
+        link.style.visibility = "hidden";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+    }
+    setFiles(null);
+  };
 
   const handleSubmit = () => {
-    i = 0;
-    minRows = Number.MAX_VALUE;
-    parsedFiles = []
+    let i = 0;
+    let minRows = Number.MAX_VALUE;
+    const parsedFiles: unknown[] = [];
     const parseNextFile = () => {
       let file = files!.length === i ? null : files![i++];
       if (file) {
@@ -26,18 +50,19 @@ export default function App(): ReactElement {
           skipEmptyLines: true,
           complete: (res) => {
             minRows = Math.min(minRows, res.data.length);
-            parsedFiles.push(res.data)
+            parsedFiles.push(res.data);
             parseNextFile();
           },
+          error: () => {
+            window.alert("Something went wrong, Please try again.");
+          },
         });
-      }
-      else {
-        makeCSV(parsedFiles);
+      } else {
+        makeCSV(parsedFiles, minRows);
       }
     };
     parseNextFile();
   };
-
 
   return (
     <div
