@@ -4,9 +4,10 @@ import HelpText from "./HelpText";
 
 interface Props {
   files: FileList | null;
+  handleSubmit: () => void;
 }
 
-export default function FilePreview({ files }: Props): ReactElement {
+export default function FilePreview({ files, handleSubmit }: Props): ReactElement {
   return (
     <div style={{ textAlign: "center", marginTop: "3em" }}>
       {(!files || (files && files.length === 0)) && <HelpText />}
@@ -33,6 +34,7 @@ export default function FilePreview({ files }: Props): ReactElement {
             transitionDuration: "0.4s"
           }}
           id="submitButton"
+          onClick={handleSubmit}
         >
           Submit
         </button>
